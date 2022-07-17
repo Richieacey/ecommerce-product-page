@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?
+  family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | E-commerce product page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="main-section">
+      <img class="sneakers-logo" src="images/logo.svg">
+      <div class="heading-titles">
+        <div class="collections">Collections</div>
+        <div class="men">Men</div>
+        <div class="women">Women</div>
+        <div class="about">About</div>
+        <div class="contact">Contact</div>
+      </div>
+      
+      <div class="right-section">
+        <div class="quantity-container">
+          <div class="number-of-item">0</div>
+          <img  onclick="toggleCart()" class="cart" src="images/icon-cart.svg">
+          <div class="cart-active">
+            <div class="cart-title">Cart</div>
+            <div class="cart-description">Your cart is empty.</div>
+          </div>
+
+          <div class="cart-active2">
+            <div class="cart-title2">Cart</div>
+            <div>
+              <div class="cart-container1">
+                <div class="cart-thumbnail">
+                  <img class="cart-thumbnail-image" src="images/image-product-1-thumbnail.jpg">
+                </div>
+                <div class="title-and-price">
+                  <div class="title-container">
+                    <p class="title-of-item">Fall Limited Edition Sneakers</p>
+                    <img onclick="deleteItem()" class="delete-btn" src="images/icon-delete.svg">
+                  </div>
+                  <div class="price-quantity-container">
+                    <p class="price-and-quantity"></p>
+                    <div class="bold-text"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="cart-container2">
+                <button class="checkout-btn">Checkout</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="profile-picture">
+          <img class="profile-avatar" src="images/image-avatar.png">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="main-content">
+      <div class="left-side">
+        <img class="main-image" src="images/image-product-1.jpg">
+        <div class="thumbnails">
+          <div class="thumbnail1-container active">
+            <img onclick="openLightBox1()" class="thumbnail1" src="images/image-product-1-thumbnail.jpg">
+          </div>
+          <div  class="thumbnail2-container active">
+            <img onclick="openLightBox2()" class="thumbnail2" src="images/image-product-2-thumbnail.jpg">
+          </div>
+          <div  class="thumbnail3-container active">
+            <img onclick="openLightBox3()" class="thumbnail3" src="images/image-product-3-thumbnail.jpg">
+          </div>
+          <div  class="thumbnail4-container active">
+            <img onclick="openLightBox4()" class="thumbnail4" src="images/image-product-4-thumbnail.jpg">
+          </div>
+        </div>
+      </div>
+      <div class="lightbox">
+        <div class="lightbox-btn">
+          <img class="close-btn" onclick="closeLightBox()" src="images/icon-close.svg">
+          <button onclick="prevImage()" class="previous-btn">
+            <img class="previous" src="images/icon-previous.svg">
+          </button>
+          <img id="lightbox" class="lightbox-image" src="images/image-product-1.jpg">
+          <button onclick="nextImage()" class="next-btn">
+            <img class="next" src="images/icon-next.svg">
+          </button>
+        </div>
+        <div id="thumbnail2" class="thumbnails2">
+          <div>
+            <img onmouseover="hoverOver0()" onclick="updateLightBox1()" onmouseleave="hoverLeave0()" class="lightbox-image1" src="images/image-product-1-thumbnail.jpg">
+          </div>
+          <div>
+            <img onmouseover="hoverOver1()" onclick="updateLightBox2()" onmouseleave="hoverLeave1()" class="lightbox-image2" src="images/image-product-2-thumbnail.jpg">
+          </div>
+          <div>
+            <img onmouseover="hoverOver2()" onclick="updateLightBox3()" onmouseleave="hoverLeave2()" class="lightbox-image3" src="images/image-product-3-thumbnail.jpg">
+          </div>
+          <div>
+            <img onmouseover="hoverOver3()" onclick="updateLightBox4()" onmouseleave="hoverLeave3()" class="lightbox-image4" src="images/image-product-4-thumbnail.jpg">
+          </div>
+        </div>
+      </div>
+      <div class="right-side">
+        <div class="company-desc">SNEAKER COMPANY</div>
+        <h1 class="item-title">Fall Limited Edition Sneakers</h1>
+        <p class="item-desc">
+          These low-profile sneakers are your perfect casual wear companion. Featuring a 
+          durable rubber outer sole, they&#39;ll withstand everything the weather can offer.
+        </p>
+        <div class="price-and-discount">
+          <div class="item-price">$125.00</div>
+          <div class="item-discount">50%</div>
+        </div>
+        <div class="price-b4-discount">$250.00</div>
+        <div class="item-purchase">
+          <div class="quantity-btn">
+              <img onclick="reduceQuantity()" class="reduce-quantity" src="images/icon-minus.svg">
+            <div class="quantity">0</div>
+              <img onclick="increaseQuantity()" class="increase-quantity" src="images/icon-plus.svg">
+          </div>
+          
+          <button onclick="increaseCartNumber()" class="add-btn">
+            <img class="cart-btn" src="images/icon-cart - Copy.svg">
+            Add to cart
+          </button>
+        </div>
+      </div>
+    </div>
+   
+  </main>
+ 
+ 
+ 
+ 
+
+
+ 
+
+  
+
+ 
+
+ 
+  
+  
+
+  
+  
+  
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Richie Ace</a>.
+  </div> -->
+  <script src="index.js"></script>
+</body>
+</html>

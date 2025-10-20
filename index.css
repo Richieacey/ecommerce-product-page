@@ -26,7 +26,7 @@ header {
 
 
 .sneakers-logo {
-  width: 2.4rem;
+  width: 5rem;
   height: auto;
   margin-right: .6rem;
 }
@@ -292,4 +292,5 @@ main { padding: 2rem 1rem; }
   .lightbox .lightbox-btn { gap: .6rem; }
   .lightbox-image { max-width: 90vw; }
 }
+
 
